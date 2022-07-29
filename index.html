@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Redirecting..</title>
+  </head>
+  <body>
+    <noscript>Sorry! page only work with js</noscript>
+    <script>
+      if (window.location.pathname == '/') {
+        window.location.href = '/app.html'
+      } else {
+        let url = 'http://localhost:3000' + window.location.pathname
+        fetch(url) //api for the get request
+          .then((response) => response.json())
+          .then((data) => {
+            if (data.link) {
+              if (data.link[0] != 'h') {
+                data.link = 'https://' + data.link
+              }
+              window.location = data.link
+            } else {
+              throw new Error(data.msg)
+            }
+          })
+          .catch((e) => {
+            console.log(e)
+            document.body.innerHTML = e
+          })
+      }
+    </script>
+  </body>
+</html>
