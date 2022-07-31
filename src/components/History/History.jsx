@@ -24,9 +24,13 @@ function History() {
   return (
     // <div className="container">
     <div className="hw">
-      {history.map((e) => {
-        return <HistoryItem key={e.key} data={e} />
-      })}
+      {history.length == 0 ? (
+        <h1 className="not-found">no history found *sus*</h1>
+      ) : (
+        history.map((e) => {
+          return <HistoryItem key={e.key} data={e} />
+        })
+      )}
     </div>
     // </div>
   )

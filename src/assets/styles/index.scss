@@ -605,6 +605,11 @@ body {
   }
 }
 
+.not-found {
+  text-align: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
 @media screen and (min-width: 985px) {
   .historyItem {
     .reactive-btn {
@@ -613,9 +618,8 @@ body {
     display: flex;
     justify-content: space-around;
     .detials {
-      .stats{
-    margin-left:1em;
-
+      .stats {
+        margin-left: 1em;
       }
       width: 60%;
       .linkandkey {

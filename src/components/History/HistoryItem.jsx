@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react'
 import ReactButton from '../abstract_componenets/Reactivebutton'
-import config from '../../../config.json'
 function HistoryItem({ data }) {
   const [CopyBtn, setCopyBtn] = useState('idle')
-  const url = config.shortenUrl + '/'
+  const url = import.meta.env.VITE_SERVER_URL + '/'
+
   const truncate = (str, n) => {
     return str.length > n ? str.substr(0, n - 1) + '....' : str
   }

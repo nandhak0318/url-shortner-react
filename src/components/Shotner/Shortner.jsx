@@ -24,7 +24,8 @@ function Shortner({ Page, SetPage }) {
         body.hits = hits
       }
       const response = await axios.post('/', body)
-      setLink(response.data.shortenLink)
+      let tempLink = import.meta.env.VITE_SERVER_URL + response.data.shortenLink
+      setLink(tempLink)
       setBtnState('success')
     } catch (e) {
       console.log(e)
@@ -54,6 +55,7 @@ function Shortner({ Page, SetPage }) {
       const data = await axios.post('/creatUser')
       window.localStorage.setItem('uid', data.data.uid)
     }
+    console.log(import.meta.env)
     setLoading(false)
   }
   useEffect(() => {
