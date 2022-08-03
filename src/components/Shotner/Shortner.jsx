@@ -14,7 +14,6 @@ function Shortner({ Page, SetPage }) {
     try {
       setBtnState('loading')
       const uid = window.localStorage.getItem('uid')
-      console.log(link, expiresIn, uid, hits)
       let body = {
         link: link,
         uid: uid,
@@ -55,7 +54,6 @@ function Shortner({ Page, SetPage }) {
       const data = await axios.post('/creatUser')
       window.localStorage.setItem('uid', data.data.uid)
     }
-    console.log(import.meta.env)
     setLoading(false)
   }
   useEffect(() => {

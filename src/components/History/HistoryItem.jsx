@@ -28,7 +28,7 @@ function HistoryItem({ data }) {
       <div className="detials">
         <div className="linkandkey">
           <a href={data.link}>{truncate(data.link, 24)}</a>
-          <a href={url + data.key}>{url + data.key}</a>
+          <a href={url + data.key}>{truncate(url + data.key)}</a>
         </div>
         <div className="stats">
           <div className="hitsR">
