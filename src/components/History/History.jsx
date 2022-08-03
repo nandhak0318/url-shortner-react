@@ -12,7 +12,6 @@ function History() {
         window.localStorage.clear()
         window.localStorage.setItem('uid', data.data.uid)
       }
-      console.log(data.data.history)
       setHistory(data.data.history)
     }
   }
