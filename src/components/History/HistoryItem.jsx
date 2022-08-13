@@ -53,6 +53,7 @@ function HistoryItem({ data }) {
       </div>
     </li>
   )
+  
 }
 
 export default HistoryItem
